@@ -22,7 +22,7 @@ alias untar="tar -zsvf"
 alias sha="shasum -a 256"
 
 # ls, with the human-readable size and sorted by size
-alias lt="ls --human-readable --sizw -1 -S --classify"
+alias lt="ls --human-readable --size -1 -S --classify"
 
 # Various git aliases
 alias gch="git checkout"
