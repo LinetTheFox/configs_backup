@@ -36,6 +36,7 @@ alias gpb='git pull origin `git branch --show-current`'
 alias gP='git push origin `git branch --show-current`'
 alias gr="git reset --hard"
 alias gfa="git fetch --all"
+alias gm="git merge"
 
 # Change message of last commit
 alias gcam="git commit --amend -m"
