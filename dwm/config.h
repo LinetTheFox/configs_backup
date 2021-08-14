@@ -48,8 +48,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	/* { "Gimp",     NULL,       NULL,       0,            1,           -1 }, */
-	// { "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	 { "Gimp",     NULL,       NULL,       0,            1,           -1 }, 
+	// { "Librewolf",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -92,9 +92,8 @@ static const char *mutevol[] = { "amixer", "-q", "set", "Master", "toggle", NULL
 
 
 // launching apps
-static const char *run_lfm[] = 		{ "st", 	"-e", "lfm", 	NULL };
 static const char *run_librewolf[] = 	{ "librewolf", 			NULL };
-static const char *run_vim[] = 		{ "st", 	"-e", "vim",	NULL };
+static const char *run_vim[] = 		{ "st", 	"-e", "nvim",	NULL };
 static const char *run_telegram[] = 	{ "telegram", 			NULL };
 
 // brightness controlls
@@ -137,7 +136,6 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,              		XK_n,      shiftview,  	   { .i = +1 } },
 	{ MODKEY,              		XK_b,      shiftview,      { .i = -1 } },
-	{ MODKEY|ShiftMask,		XK_u,	   spawn,	   { .v = run_lfm } },
 	{ MODKEY|ShiftMask,		XK_i,	   spawn,	   { .v = run_vim } },
 	{ MODKEY|ShiftMask,		XK_o,	   spawn,	   { .v = run_librewolf } },
 	{ MODKEY|ShiftMask,		XK_p,	   spawn,	   { .v = run_telegram } },
