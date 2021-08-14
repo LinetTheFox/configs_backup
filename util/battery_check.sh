@@ -3,9 +3,9 @@
 # the average less than 5.
 
 # Ignore if we are connected to AC
-skip_check=$(cat /sys/class/power_supply/AC/online)
+do_check=$(cat /sys/class/power_supply/AC/online)
 
-if [ ! $skip_check ]; then
+if [ $do_check ]; then
 	bat0=$(cat /sys/class/power_supply/BAT0/capacity)
 	bat1=$(cat /sys/class/power_supply/BAT1/capacity)
 	cap=$(( ( $bat0 + $bat1 ) / 2 ))
