@@ -1,4 +1,4 @@
-# Documentation on wtf is going on here (w.i.p. whenever I feel like ¯\_(ツ)_/¯)
+# Documentation on wtf is going on here (w.i.p. whenever I feel like ¯\\\_(ツ)_/¯)
 
 
 ## TODO:
