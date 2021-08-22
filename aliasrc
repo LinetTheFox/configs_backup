@@ -21,6 +21,9 @@ alias untar="tar -zsvf"
 # Get SHA-256 checksum
 alias sha="shasum -a 256"
 
+# Short command for neovim
+alias v="nvim"
+
 # ls, with the human-readable size and sorted by size
 alias lt="ls --human-readable --size -1 -S --classify"
 
