@@ -68,7 +68,7 @@ static const struct arg args[] = {
     //{ netspeed_rx, "%sB/s  ", "enp0s3" },
 	{ run_command,  "[  %s ]", 	"amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
 	{ keymap,	"[  %s ]", 	NULL },
-	{ run_command,  "[  %s%% ]",	"echo  $((($(cat /sys/class/power_supply/BAT0/capacity) + $(cat /sys/class/power_supply/BAT1/capacity)) / 2))" },
+	{ battery_perc,  "[ %s%% ]",	NULL },
 	{ cpu_perc, 	"[ 閭 %s%% ]",	NULL	},
 	{ ram_used, 	"[ ﬙ %s ]", 	NULL	},
 	{ swap_used,	"[ ﬚ %s ]",	NULL	},

@@ -27,20 +27,52 @@
 	}
 
 	const char *
-	battery_perc(const char *bat)
+	perc_symbol(int perc) {	
+		if (perc <= 20) {
+			return "";
+		} else if (perc <= 40) {
+			return "";
+		} else if (perc <= 60) {
+			return "";
+		} else if (perc <= 80) {
+			return "";
+		} else {
+			return "";
+		}
+	}
+
+	const char *
+	battery_perc()
 	{
-		int perc;
-		char path[PATH_MAX];
+		int perc1;
+		int perc2;
 
-		if (esnprintf(path, sizeof(path),
-		              "/sys/class/power_supply/%s/capacity", bat) < 0) {
+		char path1[PATH_MAX];
+		char path2[PATH_MAX];
+
+		int total_perc;
+
+		if (esnprintf(path1, sizeof(path1),
+		              "/sys/class/power_supply/%s/capacity", "BAT0") < 0) {
 			return NULL;
 		}
-		if (pscanf(path, "%d", &perc) != 1) {
+
+		if (esnprintf(path2, sizeof(path2),
+			      "/sys/class/power_supply/%s/capacity", "BAT1") < 0) {
+			return NULL;	      
+		}
+
+		if (pscanf(path1, "%d", &perc1) != 1) {
 			return NULL;
 		}
 
-		return bprintf("%d", perc);
+		if (pscanf(path2, "%d", &perc2) != 1) {
+			return NULL;
+		}
+
+		total_perc = (perc1 + perc2) / 2; 
+
+		return bprintf("%s %d", perc_symbol(total_perc), total_perc);
 	}
 
 	const char *
@@ -142,7 +174,7 @@
 	}
 
 	const char *
-	battery_perc(const char *unused)
+	battery_perc()
 	{
 		struct apm_power_info apm_info;
 
@@ -199,7 +231,7 @@
 	#include <sys/sysctl.h>
 
 	const char *
-	battery_perc(const char *unused)
+	battery_perc()
 	{
 		int cap;
 		size_t len;
