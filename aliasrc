@@ -24,8 +24,13 @@ alias sha="shasum -a 256"
 # Short command for neovim
 alias v="nvim"
 
+# Quicker clear :)
+alias c="clear"
+
 # ls, with the human-readable size and sorted by size
 alias lt="ls --human-readable --size -1 -S --classify"
+
+alias tsync="doas ntpdate -b -u 0.gentoo.pool.ntp.org"
 
 # Various git aliases
 alias gch="git checkout"
