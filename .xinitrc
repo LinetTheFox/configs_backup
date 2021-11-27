@@ -21,7 +21,7 @@ xautolock -time 10 -locker slock &
 xcompmgr &
 
 # Setting the wallpaper
-feh --bg-fill $HOME/.nargy_wp.jpg &
+feh --bg-fill $HOME/.derg.png &
 
 # Running DWM
 exec /usr/local/bin/dwm

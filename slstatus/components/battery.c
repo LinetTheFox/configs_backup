@@ -27,7 +27,23 @@
 	}
 
 	const char *
-	perc_symbol(int perc) {	
+	perc_symbol(int perc)
+    {
+        char path[PATH_MAX];
+        int ac_online;
+        if (esnprintf(path, sizeof(path),
+                    "/sys/class/power_supply/%s/online", "AC") < 0) {
+            return "?";
+        }
+
+        if (pscanf(path, "%d", &ac_online) != 1) {
+            return "?";
+        }
+
+        if (ac_online) {
+            return "ﮣ";
+        }
+
 		if (perc <= 20) {
 			return "";
 		} else if (perc <= 40) {
